@@ -5,7 +5,7 @@ kaboom();
 
 loadSprite("background","kartka_swiatecna.png")
 loadSprite("star","gwiazda2.png")
-loadSound("music", "Do szopy hej pasterze.mp3")
+loadSound("music", "DoSzopyHejPasterze.mp3")
 
 // add a piece of text at position (120, 80)
 add([
@@ -22,9 +22,6 @@ const star = add([
     pos(533,45),
     rotate(1)
 ])
-add([
-    play("music")
-])
 
 var xMinus = 1;
 onUpdate(()=>{
@@ -38,3 +35,5 @@ onUpdate(()=>{
     }
     star.pos.x += xMinus
 })
+
+onKeyRelease("space",()=>play("music"))
